@@ -12,6 +12,7 @@
     "dependencies": {
         "dotenv": "^16.3.1",
         "nodemon": "^3.0.1",
-        "telegraf": "^4.12.2"
+        "telegraf": "^4.12.2",
+        "web3": "^4.0.3"
     }
 }
