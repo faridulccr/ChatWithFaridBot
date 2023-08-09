@@ -11,9 +11,9 @@ bot.command("start", (ctx) => {
 });
 
 // Handle text messages
-// bot.on("text", (ctx) => {
-//     ctx.reply("You said: " + ctx.message.text);
-// });
+bot.on("text", (ctx) => {
+    ctx.reply("You said: " + ctx.message.text);
+});
 
 // Start the bot
 bot.launch()
