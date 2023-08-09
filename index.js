@@ -1,5 +1,6 @@
 require("dotenv").config();
 const { Telegraf } = require("telegraf");
+const { message } = require("telegraf/filters");
 
 const token = process.env.BOT_TOKEN;
 // Create a bot to fetch new updates
@@ -11,7 +12,7 @@ bot.command("start", (ctx) => {
 });
 
 // Handle text messages
-bot.on("text", (ctx) => {
+bot.on(message("text"), (ctx) => {
     ctx.reply("You said: " + ctx.message.text);
 });
 
