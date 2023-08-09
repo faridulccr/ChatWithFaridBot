@@ -14,7 +14,7 @@ bot.on("message", (msg) => {
     if (messageText === "/start") {
         bot.sendMessage(chatId, "Hello! I am Faridul Islam.");
     } else if (messageText === "Hi") {
-        bot.sendMessage(chatId, "Hello!");
+        bot.sendMessage(chatId, "Hey!");
     } else {
         bot.sendMessage(chatId, "I don't understand that command.");
     }
