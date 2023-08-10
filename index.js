@@ -21,11 +21,12 @@ const getBalance = async (MMaddress) => {
 
 bot.command("balance", async (ctx) => {
     try {
-        // to do
-        const balance = await getBalance(
-            "0x2241F35E4f572362dE28e184DC9892907eF191BE"
-        );
-        ctx.reply(`Your MetaMask Goerli balance: ${balance} ETH`);
+        const address = ctx.message.text.split(" ")[1];
+        const balance = await getBalance(address);
+        // const balance = await getBalance(
+        //     "0x2241F35E4f572362dE28e184DC9892907eF191BE"
+        // );
+        ctx.reply(`Balance of ${address}: ${balance} ETH`);
     } catch (error) {
         ctx.reply("Error fetching balance. Please try again later.");
     }
