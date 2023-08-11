@@ -1,10 +1,9 @@
-window.ethereum.request({ method: "eth_requestAccounts" });
-
 const connectButton = document.getElementById("connectWallet");
 connectButton.addEventListener("click", () => {
+    window.ethereum.request({ method: "eth_requestAccounts" });
     if (typeof window.ethereum !== "undefined") {
-        console.log("MetaMask is installed!");
+        alert("MetaMask is installed!");
     } else {
-        console.log("MetaMask is not installed!");
+        alert("MetaMask is not installed!");
     }
 });
