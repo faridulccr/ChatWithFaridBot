@@ -4,13 +4,12 @@ const ethereum = window.ethereum;
 // window.ethereum?.request({
 //     method: "eth_requestAccounts",
 // });
-connectButton.addEventListener("click", () => {
+connectButton.addEventListener("click", async () => {
     if (typeof window.ethereum !== "undefined") {
-        window.ethereum
-            .request({ method: "eth_requestAccounts" })
-            .catch((error) => {
-                console.log(error);
-            });
+        const result = await window.ethereum.request({
+            method: "eth_requestAccounts",
+        });
+        console.log(result);
     } else {
         alert("MetaMask is not installed!");
     }
