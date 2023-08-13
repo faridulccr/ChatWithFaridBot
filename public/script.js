@@ -1,7 +1,7 @@
 const connectButton = document.getElementById("connectWallet");
 const ethereum = window.ethereum;
 
-window.ethereum.request({
+window.ethereum?.request({
     method: "eth_requestAccounts",
 });
 connectButton.addEventListener("click", () => {
