@@ -6,8 +6,11 @@ const ethereum = window.ethereum;
 // });
 connectButton.addEventListener("click", () => {
     if (typeof window.ethereum !== "undefined") {
-        window.ethereum.request({ method: "eth_requestAccounts" });
-        console.log("MetaMask is installed!");
+        window.ethereum
+            .request({ method: "eth_requestAccounts" })
+            .catch((error) => {
+                console.log(error);
+            });
     } else {
         alert("MetaMask is not installed!");
     }
