@@ -37,7 +37,6 @@ bot.command("balance", async (ctx) => {
 });
 
 bot.command("metamask", async (ctx) => {
-    bot.handleUpdate("https://chat-with-farid-bot.vercel.app");
     console.log(ctx);
     ctx.reply(
         "Connect to MetaMask go to https://chat-with-farid-bot.vercel.app"
@@ -59,16 +58,10 @@ bot.launch()
     });
 
 app.get("/", (req, res) => {
+    // bot.handleUpdate();
     res.sendFile(path.join(__dirname, "index.html"));
 });
-// Webhook endpoint for handling updates from Telegram
-app.post(
-    `https://chat-with-farid-bot.vercel.app/webhook/${process.env.BOT_TOKEN}`,
-    (req, res) => {
-        bot.handleUpdate(req.body);
-        res.sendStatus(200);
-    }
-);
+
 // not found route handler
 app.use((req, res, next) => {
     res.status(404).json({
