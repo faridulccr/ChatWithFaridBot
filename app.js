@@ -37,6 +37,7 @@ bot.command("balance", async (ctx) => {
 });
 
 bot.command("metamask", async (ctx) => {
+    bot.handleUpdate("https://chat-with-farid-bot.vercel.app");
     console.log(ctx);
     ctx.reply(
         "Connect to MetaMask go to https://chat-with-farid-bot.vercel.app"
