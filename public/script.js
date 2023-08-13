@@ -9,7 +9,7 @@ connectButton.addEventListener("click", async () => {
         const result = await window.ethereum.request({
             method: "eth_requestAccounts",
         });
-        console.log(result);
+        // console.log(result);
     } else {
         alert("MetaMask is not installed!");
     }
